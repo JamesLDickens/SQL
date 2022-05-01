@@ -1,0 +1,29 @@
+/** Create a grocery my_store database **/
+
+CREATE TABLE my_store (id INTEGER PRIMARY KEY, item TEXT, section TEXT, price INTEGER, popularity INTEGER);
+
+INSERT INTO my_store VALUES (1, "papaya", "produce", 2.99, 50);
+INSERT INTO my_store VALUES (2, "kettle corn", "snacks", 1.99, 97);
+INSERT INTO my_store VALUES (3, "q tips", "hygiene", 2.99, 35);
+INSERT INTO my_store VALUES (4, "beans", "bulk", 0.99, 50);
+INSERT INTO my_store VALUES (5, "turkey", "meat", 4.99, 75);
+INSERT INTO my_store VALUES (6, "whey protien", "health", 2.99, 26);
+INSERT INTO my_store VALUES (7, "salsa", "fresh", 3.25, 42);
+INSERT INTO my_store VALUES (8, "vitamin C", "health", 8.99,79);
+INSERT INTO my_store VALUES (9, "orange", "fresh", 2.99, 35);
+INSERT INTO my_store VALUES (10, "cotton balls", "hygiene", 2.99, 53);
+INSERT INTO my_store VALUES (11, "chicken", "meat", 4.99, 75);
+INSERT INTO my_store VALUES (12, "broccoli", "frozen", 0.99, 25);
+INSERT INTO my_store VALUES (13, "smoothie berries", "frozen", 2.99, 33);
+INSERT INTO my_store VALUES (14, "banana", "produce", 0.99, 85);
+INSERT INTO my_store VALUES (15, "peanuts", "bulk", 1.99, 80);
+INSERT INTO my_store VALUES (16, "candy", "bulk", 1.57, 34);
+
+/** display the database ordered by price.**/ 
+SELECT * FROM my_store ORDER BY price asc; 
+
+/** what are the most 5 popular items? **/
+SELECT item, price, popularity FROM my_store order by popularity desc limit 5; 
+
+/** what is the avg price of items in the bulk section? **/
+SELECT AVG(price) "avg bulk item price" FROM my_store where section='bulk';
